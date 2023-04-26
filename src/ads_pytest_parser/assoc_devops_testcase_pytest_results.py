@@ -46,7 +46,6 @@ def main():
     # Construct the URL and the header
     URL = f"https://dev.azure.com/{ORGANIZATION}/{PROJECT}/_apis/testplan/Plans/{PLAN_ID}/Suites/{SUITE_ID}/TestPoint?api-version=7.0"
     headers = {
-        "Authorization": f"Basic {AUTH_TOKEN}",
         "Content-Type": "application/json",
     }
 
@@ -77,5 +76,7 @@ def main():
     print(body)
 
     # send an http request to the URL
-    response = requests.patch(URL, headers=headers, data=json.dumps(body))
+    response = requests.patch(
+        URL, headers=headers, auth=("", AUTH_TOKEN), data=json.dumps(body)
+    )
     print(response)

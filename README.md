@@ -1,7 +1,7 @@
 ![Version](https://img.shields.io/pypi/v/ads-pytest-parser.svg)
 
 # Pytest Parser to Azure DevOps Test Case
-Associate DevOps test cases with pytest XML results
+Associate DevOps test cases with pytest nunit XML results
 
 
 ## Usage
